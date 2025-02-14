@@ -16,6 +16,30 @@ export const postApi = api.injectEndpoints({
                 method: 'GET', 
             })
         }),
-        // getPostById: builder.query
+        getPostById: builder.query<Post, string>({
+            query: (id) => ({
+                url: `/posts/${id}`,
+                method: 'GET'
+            })
+        }),
+        deletePost: builder.mutation<void, string>({
+            query: (id) => ({
+                url: `/posts/${id}`,
+                method: 'DELETE'
+            })
+        })
     })
 })
+
+export const {
+    useCreatePostMutation,
+    useGetAllPostsQuery,
+    useGetPostByIdQuery,
+    useLazyGetAllPostsQuery,
+    useLazyGetPostByIdQuery,
+    useDeletePostMutation
+} = postApi
+
+export const {
+    endpoints: {createPost, getAllPosts, getPostById, deletePost}
+} = postApi

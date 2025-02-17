@@ -13,11 +13,11 @@ const Layout = () => {
   const user = useSelector(selectUser);
   const navigate = useNavigate()
 
-  // useEffect(()=>{
-  //   if (!isAuthenticated){
-  //     navigate('/auth')
-  //   }
-  // }, [])
+  useEffect(()=>{
+    if (!isAuthenticated){
+      navigate('/auth')
+    }
+  }, [])
   return (
     <>
         <Header/>
@@ -28,8 +28,8 @@ const Layout = () => {
           <div className='flex-1 p-4'>
           <Outlet/>
           </div>
-          <div className="flex-2 p-4">
-            <div className="flex-col flex gap-5">
+          <div className="flex-2 p-4 ">
+            <div className="flex-col flex gap-5 rounded-md card-border">
               {!user && <Profile/>}
             </div>
           </div>

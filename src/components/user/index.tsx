@@ -16,7 +16,7 @@ const User: React.FC<Props> = ({
     className = ''
 }) => {
     return (
-        <div className={`flex items-center space-x-4 p-4 border rounded-lg shadow-sm ${className}`}>
+        <div className={`flex items-center space-x-4 pb-4 ${className}`}>
             <img
                 src={`${BASE_URL}${avatarUrl}`}
                 alt={name}

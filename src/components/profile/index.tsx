@@ -15,12 +15,12 @@ const Profile = () => {
 
 
   return (
-    <div className='py-4 w-[302px]'>
-      <div className='pb-0 pt-2 px-4 flex-col items-center'>
+    <div className='py-4 w-[302px] shadow-lg  p-2'>
+      <div className='pb-8 pt-2 px-4 flex-col items-center'>
         <img alt='card profile'
-        className='object-cover rounded-xl'
+        className='object-cover rounded-xl '
         src={ `${BASE_URL}${avatarUrl}`}
-        width={370}
+        width={400}
         />
       </div>
       <div>

@@ -4,6 +4,7 @@ import { Controller, useForm } from 'react-hook-form';
 import { ErrorMessage } from '../error-message';
 import SendIcon from '@mui/icons-material/Send';
 import SmsIcon from '@mui/icons-material/Sms';
+import CreateIcon from '@mui/icons-material/Create';
 
 const CreatePost = () => {
     const [ CreatePost ] = useCreatePostMutation();
@@ -41,7 +42,8 @@ const CreatePost = () => {
          render={({field}) => (
             <textarea
             {...field}
-            className=' bg-white focus:outline-none text-black p-2 br-2 resize-none rounded-sm w-[100%] border-1 border-black'
+            className=' bg-white focus:outline-none text-black p-2 br-2 resize-none rounded-lg w-[100%] shadow-lg border-1 mb-2 border-[#C9C0BB] rounded-lg'
+            placeholder='type your message here...'
             >
 
             </textarea>
@@ -50,8 +52,8 @@ const CreatePost = () => {
 
         {errors && <ErrorMessage error ={ error }/>}
 
-        <button className='flex-end flex items-center gap-2'>
-             <SmsIcon/>Добавить пост 
+        <button className='flex-end flex items-center gap-2 bg-green-500 p-2 rounded-lg cursor-pointer'>
+                Добавить пост <CreateIcon className='font-10'/>
         </button>
     </form>
   )

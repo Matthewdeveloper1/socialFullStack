@@ -98,25 +98,26 @@ const Card: React.FC<Props> = ({
     }
     
   return (
-    <div className='mb-5'>
-      <div className='justify-between items-center bg-transparent'>
-        <Link to={`/users/${authorId}`}>
-            <User
-            name={name}
-            className='text-small font-semibold leading-non text-default-600'
-            avatarUrl={avatarUrl}
-            description={ createdAt && formatToClientDate(createdAt)}
-            />
-        </Link>
+    <div className='mb-5 shadow-lg border-1 border-[#C9C0BB] rounded-md p-4 w-[630px] dark:border-[10100f] card-border'>
         {
             authorId === currentUser?.id && (
-                <div className="cursor-pointer" onClick={handleDelete}>
+                <div className="cursor-pointer flex justify-end" onClick={handleDelete}>
                     {
-                        deletePostStatus.isLoading || deleteCommentStatus.isLoading ? '...loading' : <DeleteOutlineIcon/>
+                        deletePostStatus.isLoading || deleteCommentStatus.isLoading ? '...loading' : <DeleteOutlineIcon className='absolute'/>
                     }
                 </div>
             )
         }
+      <div className='justify-between items-center'>
+        <Link to={`/users/${authorId}`}>
+            <User
+            name={name}
+            className='text-small font-semibold leading-none text-default-600 items-start'
+            avatarUrl={avatarUrl}
+            description={ createdAt && formatToClientDate(createdAt)}
+            />
+        </Link>
+        
       </div>
       {/* body */}
         <div className="px-3 py-2 mb-5">

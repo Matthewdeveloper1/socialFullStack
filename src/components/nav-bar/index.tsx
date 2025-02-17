@@ -8,18 +8,18 @@ export const NavBar = () => {
   return (
     <div>
       <ul className="flex flex-col gap-5">
-        <li className='g-5'>
+        <li className='g-5  hover:text-gray-500'>
           <NavButton href='/'>
              <NewspaperIcon/>Posts
           </NavButton>
         </li>
-        <li>
+        <li  className='hover:text-gray-500'>
           <NavButton href='following'>
              <PermIdentityIcon/>Following
           </NavButton>
         </li>
-        <li>
-          <NavButton href='followers' >
+        <li  className='hover:text-gray-500'>
+          <NavButton href='followers'>
             <GroupsIcon/> Followers
           </NavButton>
         </li>

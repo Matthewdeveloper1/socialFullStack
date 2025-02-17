@@ -13,6 +13,7 @@ import Followers from "./pages/followers"
 import Following from "./pages/following"
 
 import Auth from "./pages/auth"
+import AuthGuard from "./features/authGuard"
 
 const container = document.getElementById("root")
 
@@ -56,7 +57,9 @@ if (container) {
     <React.StrictMode>
       <Provider store={store}>
         <ThemeProvider>
-          <RouterProvider router={router} />
+          <AuthGuard>
+            <RouterProvider router={router} />
+          </AuthGuard>
         </ThemeProvider>
       </Provider>
     </React.StrictMode>,

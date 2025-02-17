@@ -1,4 +1,4 @@
-import { Like } from "../types";
+import type { Like } from "../types";
 import { api } from "./api";
 
 export const likesApi = api.injectEndpoints({

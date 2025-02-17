@@ -7,15 +7,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+@layer base {
+  :root {
+    --background: white;
+    --foreground: black;
+  }
+
+  [data-theme="dark"] {
+    --background: #1f2937; /* bg-gray-800 */
+    --foreground: white;
+  }
+}
+
 
 main{
   min-height: 100vh;
 }
-
-.dark{
-  background-color: gray;
-}
-
 
 
 code {

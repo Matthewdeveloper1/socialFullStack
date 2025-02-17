@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import type React from 'react';
+import { useState } from 'react'
 import { useLikePostMutation, useUnLikePostMutation } from '../../app/services/likesApi';
 import { useDeletePostMutation, useLazyGetAllPostsQuery, useLazyGetPostByIdQuery } from '../../app/services/postsApi';
 import { useDeleteCommentMutation } from '../../app/services/commentsApi';
 import { Link, useNavigate } from 'react-router-dom';
+// eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import { useSelector } from 'react-redux';
 import { selectCurrent } from '../../features/userSlice';
 import User from '../user';

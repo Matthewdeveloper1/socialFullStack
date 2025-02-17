@@ -2,6 +2,8 @@ import React from 'react'
 import { useCreatePostMutation, useLazyGetAllPostsQuery } from '../../app/services/postsApi'
 import { Controller, useForm } from 'react-hook-form';
 import { ErrorMessage } from '../error-message';
+import SendIcon from '@mui/icons-material/Send';
+import SmsIcon from '@mui/icons-material/Sms';
 
 const CreatePost = () => {
     const [ CreatePost ] = useCreatePostMutation();
@@ -28,7 +30,7 @@ const CreatePost = () => {
         }
     })
     return (
-    <form className='felx-grow ' onSubmit={onSubmit}>
+    <form className='flex-grow' onSubmit={onSubmit}>
         <Controller
          name='post'
          control={control}
@@ -39,7 +41,7 @@ const CreatePost = () => {
          render={({field}) => (
             <textarea
             {...field}
-            className='mb-5 w-[100%] bg-color-white'
+            className=' bg-white focus:outline-none text-black p-2 br-2 resize-none rounded-sm w-[100%] border-1 border-black'
             >
 
             </textarea>
@@ -48,8 +50,8 @@ const CreatePost = () => {
 
         {errors && <ErrorMessage error ={ error }/>}
 
-        <button className='flex-end'>
-            Добавить пост
+        <button className='flex-end flex items-center gap-2'>
+             <SmsIcon/>Добавить пост 
         </button>
     </form>
   )

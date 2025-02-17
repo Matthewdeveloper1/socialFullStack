@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from '../theme-provider'
+// eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import { useDispatch, useSelector } from 'react-redux'
 import { logout, selectIsAuthenticated } from '../../features/userSlice'
 import { useNavigate } from 'react-router-dom'

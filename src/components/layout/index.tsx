@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+/* eslint-disable @typescript-eslint/no-restricted-imports */
+import { useEffect } from 'react'
 import Header from '../header'
 import { Container } from '../container'
 import { NavBar } from '../nav-bar'
@@ -12,11 +13,11 @@ const Layout = () => {
   const user = useSelector(selectUser);
   const navigate = useNavigate()
 
-  useEffect(()=>{
-    if (!isAuthenticated){
-      navigate('/auth')
-    }
-  }, [])
+  // useEffect(()=>{
+  //   if (!isAuthenticated){
+  //     navigate('/auth')
+  //   }
+  // }, [])
   return (
     <>
         <Header/>

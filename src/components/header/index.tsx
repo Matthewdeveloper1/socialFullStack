@@ -30,7 +30,7 @@ const Header = () => {
             </button>
             {/* Logout */}
             {isAuthenticated &&  
-             <button onClick={handleLogout} className='flex flex-collumn gap-2 items-center cursor-pointer border boder-1 border-color-white rounded-sm p-1'>
+             <button onClick={handleLogout} className='flex flex-collumn gap-2 items-center cursor-pointer rounded-sm p-2'>
              Log Out
              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-5">
                <path fillRule="evenodd" d="M17 4.25A2.25 2.25 0 0 0 14.75 2h-5.5A2.25 2.25 0 0 0 7 4.25v2a.75.75 0 0 0 1.5 0v-2a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v11.5a.75.75 0 0 1-.75.75h-5.5a.75.75 0 0 1-.75-.75v-2a.75.75 0 0 0-1.5 0v2A2.25 2.25 0 0 0 9.25 18h5.5A2.25 2.25 0 0 0 17 15.75V4.25Z" clipRule="evenodd" />

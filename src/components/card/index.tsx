@@ -70,6 +70,23 @@ const Card: React.FC<Props> = ({
         }
     }
 
+    const handleClick = async () => {
+        try {
+            likedByUser
+                ? await unlikePOst(id).unwrap()
+                : await likePost({postId: id}).unwrap()
+
+                await refetchPosts();
+                await triggerGetPostById(id).unwrap();
+        } catch (error) {
+            if(hasErrorField(error)) {
+                setError(error.data.error)
+            } else {
+                setError(error as string)
+            }
+        }
+    }
+
     const handleDelete = async () => {
         try {
             switch (cardFor){
@@ -82,7 +99,7 @@ const Card: React.FC<Props> = ({
                     navigate('/');
                     break
                 case 'comment':
-                    await deleteComment(id).unwrap();
+                    await deleteComment(commentId).unwrap();
                     await refetchPosts();
                     break
                 default: 
@@ -127,14 +144,14 @@ const Card: React.FC<Props> = ({
             cardFor !== 'comment' && (
                 <div className="gap-3">
                     <div className="flex gap-5 items-center">
-                        <div>
-                            <MetaInfo
-                            count={likesCount}
+                        <div onClick={handleClick} className='flex flex-row gap-1'>
+                            <FavoriteBorderIcon/>
+                            <MetaInfo count={likesCount}
                             />
                         </div>
-                        <Link to={`/posts/${id}`}>
-                            <MetaInfo count={commentCount}
-                            />
+                        <Link className='flex flex-row gap-1' to={`/posts/${id}`}>
+                            <ChatBubbleOutlineIcon/>
+                            <MetaInfo count={commentCount}/>
                         </Link>
                     </div>
                     <ErrorMessage error = {error}/>

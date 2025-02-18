@@ -29,8 +29,8 @@ const Layout = () => {
           <Outlet/>
           </div>
           <div className="flex-2 p-4 ">
-            <div className="flex-col flex gap-5 rounded-md card-border">
-              {!user && <Profile/>}
+            <div className="flex-col flex gap-5 rounded-md card-border w-[302px]">
+             {user && <Profile/>}
             </div>
           </div>
         </Container>

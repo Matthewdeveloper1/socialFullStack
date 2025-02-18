@@ -42,7 +42,7 @@ const CreatePost = () => {
          render={({field}) => (
             <textarea
             {...field}
-            className=' bg-white focus:outline-none text-black p-2 br-2 resize-none rounded-lg w-[100%] shadow-lg border-1 mb-2 border-[#C9C0BB] rounded-lg'
+            className='create-input bg-white focus:outline-none text-black p-2 br-2 resize-none rounded-lg w-[100%] shadow-lg border-1 mb-2 border-[#C9C0BB] rounded-lg'
             placeholder='type your message here...'
             >
 
@@ -52,7 +52,7 @@ const CreatePost = () => {
 
         {errors && <ErrorMessage error ={ error }/>}
 
-        <button className='flex-end flex items-center gap-2 bg-green-500 p-2 rounded-lg cursor-pointer'>
+        <button className='flex-end flex items-center gap-2 bg-green-500 p-2 rounded-lg '>
                 Добавить пост <CreateIcon className='font-10'/>
         </button>
     </form>

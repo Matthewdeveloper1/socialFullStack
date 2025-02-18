@@ -12,17 +12,29 @@ body {
     --background: white;
     --foreground: black;
     --border: #C9C0BB;
+    --bg: white;
+    --text: black;
   }
 
   [data-theme="dark"] {
     --background: #000000; 
     --foreground: white;
     --border: #10100f;
+    --bg: rgba(0, 0, 0, 8);
+    --text: white;
   }
 }
-
+::-webkit-scrollbar {
+  width: 0;
+}
 .card-border {
   border: 1px solid var(--border);
+}
+
+.create-input{
+  border: 1px solid var(--border);
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 
